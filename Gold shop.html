@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gram to KPY</title>
+	<script type="text/javascript">
+		// 
+		function cal(){
+			var gram=document.getElementById('gram').value;
+			var price=document.getElementById('price').value;
+			var temkyat=gram/16.6;
+			var kyat=parseInt(temkyat);
+			var tempe=(temkyat-kyat)*16;
+			var pe=parseInt(tempe);
+			var temyway=(tempe-pe)*8;
+			var yway=parseInt(temyway);
+			var pri=price/128;
+			var total=pri*((kyat*128)+(pe*8)+yway);
+			document.getElementById('kyat').value=kyat;
+			document.getElementById('pe').value=pe;
+			document.getElementById('yway').value=yway;
+			
+			document.getElementById('total').value=total;
+		}
+		
+			
+		
+
+		</script>
+		
+
+</head>
+<body>
+		Gram:<input type="number" id="gram"	><br>
+		Unit Price:<input type="number" id="price"><br>
+		<button onclick="cal()">Calculate</button>
+		<br>
+
+		Kyat:<input type="number" id="kyat"><br>
+		Pe:<input type="number" id="pe"><br>
+		Yway:<input type="number" id="yway"><br>
+		Total:<input type="number" id="total">
+		
+
+		
+
+</body>
+</html>
